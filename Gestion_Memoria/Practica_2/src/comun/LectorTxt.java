@@ -1,3 +1,5 @@
+package comun;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -17,7 +19,7 @@ public class LectorTxt {
         List<Proceso> listaProcesos = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(this.rutaArchivo))) {
-            
+
             // Leer la primera linea y descartarla (pues son los encabezados)
             String linea = br.readLine();
 
@@ -25,16 +27,16 @@ public class LectorTxt {
             while ((linea = br.readLine()) != null) {
                 // Limpiar espacios en blanco al inicio y final de la linea
                 linea = linea.trim();
-                
+
                 // Ignorar lineas vacias
                 if (linea.isEmpty()) {
                     continue;
                 }
 
-                // Separar los valores ("\\s+" divide la cadena cada vez que encuentra uno o mas espacios en blanco consecutivos)
+                // Separar los valores ("\\s+" divide la cadena cada vez que encuentra uno o mas
+                // espacios en blanco consecutivos)
                 String[] datos = linea.split("\\s+");
 
-                
                 if (datos.length >= 3) { // Validar que la linea tenga exactamente los 3 datos esperados
                     int id = Integer.parseInt(datos[0]);
                     int tiempo = Integer.parseInt(datos[1]);
@@ -46,7 +48,7 @@ public class LectorTxt {
             }
         } catch (IOException e) {
             System.err.println("Error de lectura en el archivo: " + e.getMessage());
-        } 
+        }
 
         return listaProcesos;
     }

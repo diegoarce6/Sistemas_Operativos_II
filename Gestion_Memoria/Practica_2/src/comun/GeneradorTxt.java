@@ -1,3 +1,5 @@
+package comun;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,11 +25,12 @@ public class GeneradorTxt {
         this.maxSize = maxSize;
     }
 
-    // Metodo que genera el archivo de procesos (lo guarda en una directorio si se le especifica una ruta)
+    // Metodo que genera el archivo de procesos (lo guarda en una directorio si se
+    // le especifica una ruta)
     public void generarArchivo() {
 
         Random random = new Random();
-        
+
         File archivo = new File(this.nombreArchivo);
         File directorio = archivo.getParentFile(); // Obtener la carpeta de la ruta
 
