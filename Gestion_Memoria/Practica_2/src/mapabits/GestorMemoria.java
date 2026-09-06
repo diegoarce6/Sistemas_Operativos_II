@@ -34,7 +34,7 @@ public class GestorMemoria {
                 if (consecutivos == p.getTam()) {
                     p.setIndiceInicio(indiceInicio);
 
-                    for (int j = 0; j < indiceInicio + p.getTam(); j++) {
+                    for (int j = indiceInicio; j < indiceInicio + p.getTam(); j++) {
                         int indiceByteAsignado = j / 8;
                         int indiceBitAsignado = j % 8;
                         mapa[indiceByteAsignado] = (byte) (mapa[indiceByteAsignado] | (1 << indiceBitAsignado));
